@@ -45,9 +45,9 @@
             this.txtCodigoNuevo = new System.Windows.Forms.TextBox();
             this.txtNombreNuevo = new System.Windows.Forms.TextBox();
             this.txtTramiteNuevo = new System.Windows.Forms.TextBox();
-            this.txtCodigoEliminado = new System.Windows.Forms.TextBox();
-            this.txtNombreEliminado = new System.Windows.Forms.TextBox();
-            this.txtTramiteEliminado = new System.Windows.Forms.TextBox();
+            this.lblMuestraCodigo = new System.Windows.Forms.Label();
+            this.lblMuestraNombre = new System.Windows.Forms.Label();
+            this.lblMuestraTramite = new System.Windows.Forms.Label();
             this.mrcNuevoElemento.SuspendLayout();
             this.mrcElementoEliminado.SuspendLayout();
             this.mrcCola.SuspendLayout();
@@ -73,9 +73,9 @@
             // 
             // mrcElementoEliminado
             // 
-            this.mrcElementoEliminado.Controls.Add(this.txtTramiteEliminado);
-            this.mrcElementoEliminado.Controls.Add(this.txtNombreEliminado);
-            this.mrcElementoEliminado.Controls.Add(this.txtCodigoEliminado);
+            this.mrcElementoEliminado.Controls.Add(this.lblMuestraTramite);
+            this.mrcElementoEliminado.Controls.Add(this.lblMuestraNombre);
+            this.mrcElementoEliminado.Controls.Add(this.lblMuestraCodigo);
             this.mrcElementoEliminado.Controls.Add(this.lblCodigoEliminado);
             this.mrcElementoEliminado.Controls.Add(this.lblNombreEliminado);
             this.mrcElementoEliminado.Controls.Add(this.lblTramiteEliminado);
@@ -217,26 +217,29 @@
             this.txtTramiteNuevo.Size = new System.Drawing.Size(134, 20);
             this.txtTramiteNuevo.TabIndex = 6;
             // 
-            // txtCodigoEliminado
+            // lblMuestraCodigo
             // 
-            this.txtCodigoEliminado.Location = new System.Drawing.Point(104, 36);
-            this.txtCodigoEliminado.Name = "txtCodigoEliminado";
-            this.txtCodigoEliminado.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigoEliminado.TabIndex = 8;
+            this.lblMuestraCodigo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblMuestraCodigo.Location = new System.Drawing.Point(114, 39);
+            this.lblMuestraCodigo.Name = "lblMuestraCodigo";
+            this.lblMuestraCodigo.Size = new System.Drawing.Size(100, 23);
+            this.lblMuestraCodigo.TabIndex = 8;
             // 
-            // txtNombreEliminado
+            // lblMuestraNombre
             // 
-            this.txtNombreEliminado.Location = new System.Drawing.Point(70, 75);
-            this.txtNombreEliminado.Name = "txtNombreEliminado";
-            this.txtNombreEliminado.Size = new System.Drawing.Size(134, 20);
-            this.txtNombreEliminado.TabIndex = 9;
+            this.lblMuestraNombre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblMuestraNombre.Location = new System.Drawing.Point(59, 72);
+            this.lblMuestraNombre.Name = "lblMuestraNombre";
+            this.lblMuestraNombre.Size = new System.Drawing.Size(155, 20);
+            this.lblMuestraNombre.TabIndex = 9;
             // 
-            // txtTramiteEliminado
+            // lblMuestraTramite
             // 
-            this.txtTramiteEliminado.Location = new System.Drawing.Point(70, 108);
-            this.txtTramiteEliminado.Name = "txtTramiteEliminado";
-            this.txtTramiteEliminado.Size = new System.Drawing.Size(134, 20);
-            this.txtTramiteEliminado.TabIndex = 10;
+            this.lblMuestraTramite.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblMuestraTramite.Location = new System.Drawing.Point(57, 105);
+            this.lblMuestraTramite.Name = "lblMuestraTramite";
+            this.lblMuestraTramite.Size = new System.Drawing.Size(157, 20);
+            this.lblMuestraTramite.TabIndex = 10;
             // 
             // frmCola
             // 
@@ -281,8 +284,8 @@
         private System.Windows.Forms.TextBox txtNombreNuevo;
         private System.Windows.Forms.TextBox txtCodigoNuevo;
         private System.Windows.Forms.TextBox txtTramiteNuevo;
-        private System.Windows.Forms.TextBox txtTramiteEliminado;
-        private System.Windows.Forms.TextBox txtNombreEliminado;
-        private System.Windows.Forms.TextBox txtCodigoEliminado;
+        private System.Windows.Forms.Label lblMuestraTramite;
+        private System.Windows.Forms.Label lblMuestraNombre;
+        private System.Windows.Forms.Label lblMuestraCodigo;
     }
 }
