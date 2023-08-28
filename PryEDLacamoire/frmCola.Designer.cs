@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picboxRepGraficaCola = new System.Windows.Forms.PictureBox();
             this.mrcNuevoElemento = new System.Windows.Forms.GroupBox();
             this.mrcElementoEliminado = new System.Windows.Forms.GroupBox();
             this.mrcCola = new System.Windows.Forms.GroupBox();
@@ -42,25 +41,25 @@
             this.lblTramiteEliminado = new System.Windows.Forms.Label();
             this.lblNombreEliminado = new System.Windows.Forms.Label();
             this.lblCodigoEliminado = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxRepGraficaCola)).BeginInit();
+            this.picboxRepGraficaCola = new System.Windows.Forms.PictureBox();
+            this.txtCodigoNuevo = new System.Windows.Forms.TextBox();
+            this.txtNombreNuevo = new System.Windows.Forms.TextBox();
+            this.txtTramiteNuevo = new System.Windows.Forms.TextBox();
+            this.txtCodigoEliminado = new System.Windows.Forms.TextBox();
+            this.txtNombreEliminado = new System.Windows.Forms.TextBox();
+            this.txtTramiteEliminado = new System.Windows.Forms.TextBox();
             this.mrcNuevoElemento.SuspendLayout();
             this.mrcElementoEliminado.SuspendLayout();
             this.mrcCola.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxRepGraficaCola)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picboxRepGraficaCola
-            // 
-            this.picboxRepGraficaCola.BackgroundImage = global::PryEDLacamoire.Properties.Resources.RepGraficaCola;
-            this.picboxRepGraficaCola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picboxRepGraficaCola.Location = new System.Drawing.Point(2, -3);
-            this.picboxRepGraficaCola.Name = "picboxRepGraficaCola";
-            this.picboxRepGraficaCola.Size = new System.Drawing.Size(195, 230);
-            this.picboxRepGraficaCola.TabIndex = 0;
-            this.picboxRepGraficaCola.TabStop = false;
             // 
             // mrcNuevoElemento
             // 
+            this.mrcNuevoElemento.Controls.Add(this.txtTramiteNuevo);
+            this.mrcNuevoElemento.Controls.Add(this.txtNombreNuevo);
+            this.mrcNuevoElemento.Controls.Add(this.txtCodigoNuevo);
             this.mrcNuevoElemento.Controls.Add(this.btnAgregar);
             this.mrcNuevoElemento.Controls.Add(this.lblTramiteNuevo);
             this.mrcNuevoElemento.Controls.Add(this.lblNombreNuevo);
@@ -74,6 +73,9 @@
             // 
             // mrcElementoEliminado
             // 
+            this.mrcElementoEliminado.Controls.Add(this.txtTramiteEliminado);
+            this.mrcElementoEliminado.Controls.Add(this.txtNombreEliminado);
+            this.mrcElementoEliminado.Controls.Add(this.txtCodigoEliminado);
             this.mrcElementoEliminado.Controls.Add(this.lblCodigoEliminado);
             this.mrcElementoEliminado.Controls.Add(this.lblNombreEliminado);
             this.mrcElementoEliminado.Controls.Add(this.lblTramiteEliminado);
@@ -184,6 +186,58 @@
             this.lblCodigoEliminado.TabIndex = 7;
             this.lblCodigoEliminado.Text = "Código:";
             // 
+            // picboxRepGraficaCola
+            // 
+            this.picboxRepGraficaCola.BackgroundImage = global::PryEDLacamoire.Properties.Resources.RepGraficaCola;
+            this.picboxRepGraficaCola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picboxRepGraficaCola.Location = new System.Drawing.Point(2, -3);
+            this.picboxRepGraficaCola.Name = "picboxRepGraficaCola";
+            this.picboxRepGraficaCola.Size = new System.Drawing.Size(195, 230);
+            this.picboxRepGraficaCola.TabIndex = 0;
+            this.picboxRepGraficaCola.TabStop = false;
+            // 
+            // txtCodigoNuevo
+            // 
+            this.txtCodigoNuevo.Location = new System.Drawing.Point(104, 39);
+            this.txtCodigoNuevo.Name = "txtCodigoNuevo";
+            this.txtCodigoNuevo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigoNuevo.TabIndex = 4;
+            // 
+            // txtNombreNuevo
+            // 
+            this.txtNombreNuevo.Location = new System.Drawing.Point(70, 72);
+            this.txtNombreNuevo.Name = "txtNombreNuevo";
+            this.txtNombreNuevo.Size = new System.Drawing.Size(134, 20);
+            this.txtNombreNuevo.TabIndex = 5;
+            // 
+            // txtTramiteNuevo
+            // 
+            this.txtTramiteNuevo.Location = new System.Drawing.Point(70, 105);
+            this.txtTramiteNuevo.Name = "txtTramiteNuevo";
+            this.txtTramiteNuevo.Size = new System.Drawing.Size(134, 20);
+            this.txtTramiteNuevo.TabIndex = 6;
+            // 
+            // txtCodigoEliminado
+            // 
+            this.txtCodigoEliminado.Location = new System.Drawing.Point(104, 36);
+            this.txtCodigoEliminado.Name = "txtCodigoEliminado";
+            this.txtCodigoEliminado.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigoEliminado.TabIndex = 8;
+            // 
+            // txtNombreEliminado
+            // 
+            this.txtNombreEliminado.Location = new System.Drawing.Point(70, 75);
+            this.txtNombreEliminado.Name = "txtNombreEliminado";
+            this.txtNombreEliminado.Size = new System.Drawing.Size(134, 20);
+            this.txtNombreEliminado.TabIndex = 9;
+            // 
+            // txtTramiteEliminado
+            // 
+            this.txtTramiteEliminado.Location = new System.Drawing.Point(70, 108);
+            this.txtTramiteEliminado.Name = "txtTramiteEliminado";
+            this.txtTramiteEliminado.Size = new System.Drawing.Size(134, 20);
+            this.txtTramiteEliminado.TabIndex = 10;
+            // 
             // frmCola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,13 +250,13 @@
             this.Name = "frmCola";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinámica no Lineal - Cola";
-            ((System.ComponentModel.ISupportInitialize)(this.picboxRepGraficaCola)).EndInit();
             this.mrcNuevoElemento.ResumeLayout(false);
             this.mrcNuevoElemento.PerformLayout();
             this.mrcElementoEliminado.ResumeLayout(false);
             this.mrcElementoEliminado.PerformLayout();
             this.mrcCola.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxRepGraficaCola)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +277,11 @@
         private System.Windows.Forms.GroupBox mrcCola;
         private System.Windows.Forms.DataGridView dgvCola;
         private System.Windows.Forms.ListBox lstCola;
+        private System.Windows.Forms.TextBox txtNombreNuevo;
+        private System.Windows.Forms.TextBox txtCodigoNuevo;
+        private System.Windows.Forms.TextBox txtTramiteNuevo;
+        private System.Windows.Forms.TextBox txtTramiteEliminado;
+        private System.Windows.Forms.TextBox txtNombreEliminado;
+        private System.Windows.Forms.TextBox txtCodigoEliminado;
     }
 }
