@@ -74,7 +74,7 @@ namespace PryEDLacamoire
         {
             if (FilaDePersonas.Primero != null)
             {
-                lblMuestraCodigo
+                
             }
         }
     }
