@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.
 
 namespace PryEDLacamoire
 {
@@ -104,15 +105,15 @@ namespace PryEDLacamoire
         public void Recorrer()
         {
             clsNodo aux = Primero;
-            StreamWriter AD = new StreamWriter("Cola.csv", false);
+            StreamWriter AD = new StreamWriter("Cola.csv", false,Encoding.UTF8);
             AD.WriteLine("Lista de espera\n");
-            AD.WriteLine("Código;NOmbre; Trámite");
+            AD.WriteLine("Código;Nombre; Trámite");
             while (aux != null)
             {
                 AD.Write(aux.Codigo);
                 AD.Write(";"); 
                 AD.Write(aux.Nombre);
-                AD.Write("");
+                AD.Write(";");
                 AD.Write(aux.Tramite);
                 aux = aux.Siguiente;
 
@@ -120,5 +121,7 @@ namespace PryEDLacamoire
             AD.Close();
 
         }
+
+
     }
 }
