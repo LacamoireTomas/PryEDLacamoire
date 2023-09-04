@@ -74,7 +74,19 @@ namespace PryEDLacamoire
         {
             if (FilaDePersonas.Primero != null)
             {
-                
+                lblMuestraCodigo.Text = FilaDePersonas.Primero.Codigo.ToString();
+                lblMuestraNombre.Text = FilaDePersonas.Primero.Nombre;
+                lblMuestraTramite.Text = FilaDePersonas.Primero.Tramite;
+                FilaDePersonas.Eliminar();
+                FilaDePersonas.Recorrer(dgvCola);
+                FilaDePersonas.Recorrer(lstCola);
+                FilaDePersonas.Recorrer();
+            }
+            else
+            {
+                lblMuestraCodigo.Text = "";
+                lblMuestraNombre.Text = "";
+                lblMuestraTramite.Text = "";
             }
         }
     }

@@ -6,57 +6,36 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-
 namespace PryEDLacamoire
 {
-    internal class clsCola
+    class clsPila
     {
         //Campos de laclase
         private clsNodo pri;
-        private clsNodo ult;
-
+        
         //Propiedades de la Clase
         public clsNodo Primero
-        { 
-          get { return pri; } 
-          set { pri = value; } 
-        }
-
-        public clsNodo Ultimo
         {
-            get { return ult; }
-            set { ult = value; }
-
+            get { return pri; }
+            set { pri = value; }
         }
-        
+
         //Metodos
         public void Agregar(clsNodo Nuevo)
         {
-            if (Primero == null)
+            if (Primero !=null)
             {
-                Primero = Nuevo;
-                Ultimo = Nuevo;
-
+                Nuevo.Siguiente = Nuevo;
             }
-            else
-            {
-                Ultimo.Siguiente = Nuevo;
-                Ultimo = Nuevo;
-
-            }
+            Primero = Nuevo;
         }
-         public void Eliminar ()
-         {
-            if (Primero == Ultimo)
-            {
-                Primero = null;
-                Ultimo = null;
-            }
-            else
+
+        public void Eliminar()
+        {
+            if (Primero != null)
             {
                 Primero = Primero.Siguiente;
             }
-
         }
 
         public void Recorrer(DataGridView Grilla)
@@ -65,7 +44,7 @@ namespace PryEDLacamoire
             clsNodo aux = Primero;
             Grilla.Rows.Clear();
 
-            while (aux!=null)
+            while (aux != null)
             {
                 Grilla.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
                 aux = aux.Siguiente;
@@ -88,6 +67,7 @@ namespace PryEDLacamoire
 
         }
 
+
         public void Recorrer(ComboBox Combo)
 
         {
@@ -106,13 +86,13 @@ namespace PryEDLacamoire
         public void Recorrer()
         {
             clsNodo aux = Primero;
-            StreamWriter AD = new StreamWriter("Cola.csv", false,Encoding.UTF8);
+            StreamWriter AD = new StreamWriter("Cola.csv", false, Encoding.UTF8);
             AD.WriteLine("Lista de espera\n");
             AD.WriteLine("Código;Nombre; Trámite");
             while (aux != null)
             {
                 AD.Write(aux.Codigo);
-                AD.Write(";"); 
+                AD.Write(";");
                 AD.Write(aux.Nombre);
                 AD.Write(";");
                 AD.Write(aux.Tramite);
@@ -122,7 +102,6 @@ namespace PryEDLacamoire
             AD.Close();
 
         }
-
 
     }
 }
