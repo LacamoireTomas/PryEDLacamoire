@@ -46,11 +46,11 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.mrcCola = new System.Windows.Forms.GroupBox();
             this.dgvCola = new System.Windows.Forms.DataGridView();
-            this.lstCola = new System.Windows.Forms.ListBox();
-            this.picboxRepGraficaCola = new System.Windows.Forms.PictureBox();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lstCola = new System.Windows.Forms.ListBox();
+            this.picboxRepGraficaCola = new System.Windows.Forms.PictureBox();
             this.mrcNuevoElemento.SuspendLayout();
             this.mrcElementoEliminado.SuspendLayout();
             this.mrcCola.SuspendLayout();
@@ -238,6 +238,22 @@
             this.dgvCola.Size = new System.Drawing.Size(432, 240);
             this.dgvCola.TabIndex = 1;
             // 
+            // Codigo
+            // 
+            this.Codigo.FillWeight = 200F;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Tramite
+            // 
+            this.Tramite.HeaderText = "Tramite";
+            this.Tramite.Name = "Tramite";
+            // 
             // lstCola
             // 
             this.lstCola.FormattingEnabled = true;
@@ -255,22 +271,6 @@
             this.picboxRepGraficaCola.Size = new System.Drawing.Size(195, 230);
             this.picboxRepGraficaCola.TabIndex = 0;
             this.picboxRepGraficaCola.TabStop = false;
-            // 
-            // Codigo
-            // 
-            this.Codigo.FillWeight = 200F;
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Tramite
-            // 
-            this.Tramite.HeaderText = "Tramite";
-            this.Tramite.Name = "Tramite";
             // 
             // frmCola
             // 
