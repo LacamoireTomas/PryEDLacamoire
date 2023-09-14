@@ -1,7 +1,6 @@
-﻿
-namespace PryEDLacamoire
+﻿namespace PryEDLacamoire
 {
-    partial class frmPila
+    partial class frmArbolBinario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +28,14 @@ namespace PryEDLacamoire
         /// </summary>
         private void InitializeComponent()
         {
-            this.mrcCola = new System.Windows.Forms.GroupBox();
-            this.dgvCola = new System.Windows.Forms.DataGridView();
+            this.mrcListadoArbol = new System.Windows.Forms.GroupBox();
+            this.dgvLista = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lstPila = new System.Windows.Forms.ListBox();
             this.mrcElementoEliminado = new System.Windows.Forms.GroupBox();
-            this.lblMuestraTramite = new System.Windows.Forms.Label();
-            this.lblMuestraNombre = new System.Windows.Forms.Label();
-            this.lblMuestraCodigo = new System.Windows.Forms.Label();
+            this.cmbCodigo = new System.Windows.Forms.ComboBox();
             this.lblCodigoEliminado = new System.Windows.Forms.Label();
-            this.lblNombreEliminado = new System.Windows.Forms.Label();
-            this.lblTramiteEliminado = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.mrcNuevoElemento = new System.Windows.Forms.GroupBox();
             this.txtTramiteNuevo = new System.Windows.Forms.TextBox();
@@ -51,36 +45,41 @@ namespace PryEDLacamoire
             this.lblTramiteNuevo = new System.Windows.Forms.Label();
             this.lblNombreNuevo = new System.Windows.Forms.Label();
             this.lblCodigoNuevo = new System.Windows.Forms.Label();
-            this.picboxRepGraficaPila = new System.Windows.Forms.PictureBox();
-            this.mrcCola.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).BeginInit();
+            this.btnEquilibrar = new System.Windows.Forms.Button();
+            this.optInOrden = new System.Windows.Forms.RadioButton();
+            this.optPreOrden = new System.Windows.Forms.RadioButton();
+            this.optPostOrden = new System.Windows.Forms.RadioButton();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.mrcListadoArbol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.mrcElementoEliminado.SuspendLayout();
             this.mrcNuevoElemento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxRepGraficaPila)).BeginInit();
             this.SuspendLayout();
             // 
-            // mrcCola
+            // mrcListadoArbol
             // 
-            this.mrcCola.Controls.Add(this.dgvCola);
-            this.mrcCola.Controls.Add(this.lstPila);
-            this.mrcCola.Location = new System.Drawing.Point(6, 240);
-            this.mrcCola.Name = "mrcCola";
-            this.mrcCola.Size = new System.Drawing.Size(665, 270);
-            this.mrcCola.TabIndex = 7;
-            this.mrcCola.TabStop = false;
-            this.mrcCola.Text = "Listado en una Lista y una Grilla";
+            this.mrcListadoArbol.Controls.Add(this.optPostOrden);
+            this.mrcListadoArbol.Controls.Add(this.optPreOrden);
+            this.mrcListadoArbol.Controls.Add(this.optInOrden);
+            this.mrcListadoArbol.Controls.Add(this.dgvLista);
+            this.mrcListadoArbol.Location = new System.Drawing.Point(6, 240);
+            this.mrcListadoArbol.Name = "mrcListadoArbol";
+            this.mrcListadoArbol.Size = new System.Drawing.Size(665, 270);
+            this.mrcListadoArbol.TabIndex = 16;
+            this.mrcListadoArbol.TabStop = false;
+            this.mrcListadoArbol.Text = "Listado del Arbol";
             // 
-            // dgvCola
+            // dgvLista
             // 
-            this.dgvCola.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCola.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nombre,
             this.Tramite});
-            this.dgvCola.Location = new System.Drawing.Point(218, 21);
-            this.dgvCola.Name = "dgvCola";
-            this.dgvCola.Size = new System.Drawing.Size(432, 240);
-            this.dgvCola.TabIndex = 2;
+            this.dgvLista.Location = new System.Drawing.Point(227, 19);
+            this.dgvLista.Name = "dgvLista";
+            this.dgvLista.Size = new System.Drawing.Size(432, 240);
+            this.dgvLista.TabIndex = 1;
             // 
             // Codigo
             // 
@@ -98,84 +97,39 @@ namespace PryEDLacamoire
             this.Tramite.HeaderText = "Tramite";
             this.Tramite.Name = "Tramite";
             // 
-            // lstPila
-            // 
-            this.lstPila.FormattingEnabled = true;
-            this.lstPila.Location = new System.Drawing.Point(11, 21);
-            this.lstPila.Name = "lstPila";
-            this.lstPila.Size = new System.Drawing.Size(194, 238);
-            this.lstPila.TabIndex = 0;
-            // 
             // mrcElementoEliminado
             // 
-            this.mrcElementoEliminado.Controls.Add(this.lblMuestraTramite);
-            this.mrcElementoEliminado.Controls.Add(this.lblMuestraNombre);
-            this.mrcElementoEliminado.Controls.Add(this.lblMuestraCodigo);
+            this.mrcElementoEliminado.Controls.Add(this.cmbCodigo);
             this.mrcElementoEliminado.Controls.Add(this.lblCodigoEliminado);
-            this.mrcElementoEliminado.Controls.Add(this.lblNombreEliminado);
-            this.mrcElementoEliminado.Controls.Add(this.lblTramiteEliminado);
             this.mrcElementoEliminado.Controls.Add(this.btnEliminar);
-            this.mrcElementoEliminado.Location = new System.Drawing.Point(442, 15);
+            this.mrcElementoEliminado.Location = new System.Drawing.Point(464, 15);
             this.mrcElementoEliminado.Name = "mrcElementoEliminado";
-            this.mrcElementoEliminado.Size = new System.Drawing.Size(229, 219);
-            this.mrcElementoEliminado.TabIndex = 6;
+            this.mrcElementoEliminado.Size = new System.Drawing.Size(201, 108);
+            this.mrcElementoEliminado.TabIndex = 15;
             this.mrcElementoEliminado.TabStop = false;
-            this.mrcElementoEliminado.Text = "Elemento Eliminado";
+            this.mrcElementoEliminado.Text = "Elemento a Eliminar";
             // 
-            // lblMuestraTramite
+            // cmbCodigo
             // 
-            this.lblMuestraTramite.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblMuestraTramite.Location = new System.Drawing.Point(57, 105);
-            this.lblMuestraTramite.Name = "lblMuestraTramite";
-            this.lblMuestraTramite.Size = new System.Drawing.Size(157, 20);
-            this.lblMuestraTramite.TabIndex = 10;
-            // 
-            // lblMuestraNombre
-            // 
-            this.lblMuestraNombre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblMuestraNombre.Location = new System.Drawing.Point(59, 72);
-            this.lblMuestraNombre.Name = "lblMuestraNombre";
-            this.lblMuestraNombre.Size = new System.Drawing.Size(155, 20);
-            this.lblMuestraNombre.TabIndex = 9;
-            // 
-            // lblMuestraCodigo
-            // 
-            this.lblMuestraCodigo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblMuestraCodigo.Location = new System.Drawing.Point(114, 39);
-            this.lblMuestraCodigo.Name = "lblMuestraCodigo";
-            this.lblMuestraCodigo.Size = new System.Drawing.Size(100, 23);
-            this.lblMuestraCodigo.TabIndex = 8;
+            this.cmbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCodigo.FormattingEnabled = true;
+            this.cmbCodigo.Location = new System.Drawing.Point(63, 13);
+            this.cmbCodigo.Name = "cmbCodigo";
+            this.cmbCodigo.Size = new System.Drawing.Size(121, 21);
+            this.cmbCodigo.TabIndex = 8;
             // 
             // lblCodigoEliminado
             // 
             this.lblCodigoEliminado.AutoSize = true;
-            this.lblCodigoEliminado.Location = new System.Drawing.Point(6, 39);
+            this.lblCodigoEliminado.Location = new System.Drawing.Point(13, 16);
             this.lblCodigoEliminado.Name = "lblCodigoEliminado";
             this.lblCodigoEliminado.Size = new System.Drawing.Size(43, 13);
             this.lblCodigoEliminado.TabIndex = 7;
             this.lblCodigoEliminado.Text = "Código:";
             // 
-            // lblNombreEliminado
-            // 
-            this.lblNombreEliminado.AutoSize = true;
-            this.lblNombreEliminado.Location = new System.Drawing.Point(6, 75);
-            this.lblNombreEliminado.Name = "lblNombreEliminado";
-            this.lblNombreEliminado.Size = new System.Drawing.Size(47, 13);
-            this.lblNombreEliminado.TabIndex = 6;
-            this.lblNombreEliminado.Text = "Nombre:";
-            // 
-            // lblTramiteEliminado
-            // 
-            this.lblTramiteEliminado.AutoSize = true;
-            this.lblTramiteEliminado.Location = new System.Drawing.Point(6, 108);
-            this.lblTramiteEliminado.Name = "lblTramiteEliminado";
-            this.lblTramiteEliminado.Size = new System.Drawing.Size(45, 13);
-            this.lblTramiteEliminado.TabIndex = 5;
-            this.lblTramiteEliminado.Text = "Trámite:";
-            // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(26, 143);
+            this.btnEliminar.Location = new System.Drawing.Point(6, 43);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(178, 55);
             this.btnEliminar.TabIndex = 4;
@@ -191,10 +145,10 @@ namespace PryEDLacamoire
             this.mrcNuevoElemento.Controls.Add(this.lblTramiteNuevo);
             this.mrcNuevoElemento.Controls.Add(this.lblNombreNuevo);
             this.mrcNuevoElemento.Controls.Add(this.lblCodigoNuevo);
-            this.mrcNuevoElemento.Location = new System.Drawing.Point(207, 15);
+            this.mrcNuevoElemento.Location = new System.Drawing.Point(229, 15);
             this.mrcNuevoElemento.Name = "mrcNuevoElemento";
             this.mrcNuevoElemento.Size = new System.Drawing.Size(229, 219);
-            this.mrcNuevoElemento.TabIndex = 5;
+            this.mrcNuevoElemento.TabIndex = 14;
             this.mrcNuevoElemento.TabStop = false;
             this.mrcNuevoElemento.Text = "Nuevo Elemento";
             // 
@@ -205,7 +159,6 @@ namespace PryEDLacamoire
             this.txtTramiteNuevo.Name = "txtTramiteNuevo";
             this.txtTramiteNuevo.Size = new System.Drawing.Size(134, 20);
             this.txtTramiteNuevo.TabIndex = 6;
-            this.txtTramiteNuevo.TextChanged += new System.EventHandler(this.txtTramiteNuevo_TextChanged);
             // 
             // txtNombreNuevo
             // 
@@ -214,7 +167,6 @@ namespace PryEDLacamoire
             this.txtNombreNuevo.Name = "txtNombreNuevo";
             this.txtNombreNuevo.Size = new System.Drawing.Size(134, 20);
             this.txtNombreNuevo.TabIndex = 5;
-            this.txtNombreNuevo.TextChanged += new System.EventHandler(this.txtNombreNuevo_TextChanged);
             // 
             // txtCodigoNuevo
             // 
@@ -222,7 +174,6 @@ namespace PryEDLacamoire
             this.txtCodigoNuevo.Name = "txtCodigoNuevo";
             this.txtCodigoNuevo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoNuevo.TabIndex = 4;
-            this.txtCodigoNuevo.TextChanged += new System.EventHandler(this.txtCodigoNuevo_TextChanged);
             // 
             // btnAgregar
             // 
@@ -261,50 +212,91 @@ namespace PryEDLacamoire
             this.lblCodigoNuevo.TabIndex = 0;
             this.lblCodigoNuevo.Text = "Código:";
             // 
-            // picboxRepGraficaPila
+            // btnEquilibrar
             // 
-            this.picboxRepGraficaPila.BackgroundImage = global::PryEDLacamoire.Properties.Resources.Pilas_en_c__;
-            this.picboxRepGraficaPila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picboxRepGraficaPila.Location = new System.Drawing.Point(6, 4);
-            this.picboxRepGraficaPila.Name = "picboxRepGraficaPila";
-            this.picboxRepGraficaPila.Size = new System.Drawing.Size(195, 230);
-            this.picboxRepGraficaPila.TabIndex = 4;
-            this.picboxRepGraficaPila.TabStop = false;
+            this.btnEquilibrar.Location = new System.Drawing.Point(480, 158);
+            this.btnEquilibrar.Name = "btnEquilibrar";
+            this.btnEquilibrar.Size = new System.Drawing.Size(178, 55);
+            this.btnEquilibrar.TabIndex = 17;
+            this.btnEquilibrar.Text = "Equilibrar";
+            this.btnEquilibrar.UseVisualStyleBackColor = true;
             // 
-            // frmPila
+            // optInOrden
+            // 
+            this.optInOrden.AutoSize = true;
+            this.optInOrden.Location = new System.Drawing.Point(16, 53);
+            this.optInOrden.Name = "optInOrden";
+            this.optInOrden.Size = new System.Drawing.Size(66, 17);
+            this.optInOrden.TabIndex = 2;
+            this.optInOrden.TabStop = true;
+            this.optInOrden.Text = "In-Orden";
+            this.optInOrden.UseVisualStyleBackColor = true;
+            // 
+            // optPreOrden
+            // 
+            this.optPreOrden.AutoSize = true;
+            this.optPreOrden.Location = new System.Drawing.Point(16, 113);
+            this.optPreOrden.Name = "optPreOrden";
+            this.optPreOrden.Size = new System.Drawing.Size(73, 17);
+            this.optPreOrden.TabIndex = 3;
+            this.optPreOrden.TabStop = true;
+            this.optPreOrden.Text = "Pre-Orden";
+            this.optPreOrden.UseVisualStyleBackColor = true;
+            // 
+            // optPostOrden
+            // 
+            this.optPostOrden.AutoSize = true;
+            this.optPostOrden.Location = new System.Drawing.Point(16, 182);
+            this.optPostOrden.Name = "optPostOrden";
+            this.optPostOrden.Size = new System.Drawing.Size(78, 17);
+            this.optPostOrden.TabIndex = 4;
+            this.optPostOrden.TabStop = true;
+            this.optPostOrden.Text = "Post-Orden";
+            this.optPostOrden.UseVisualStyleBackColor = true;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(6, 3);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(217, 231);
+            this.treeView1.TabIndex = 18;
+            // 
+            // frmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(676, 515);
-            this.Controls.Add(this.mrcCola);
+            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.btnEquilibrar);
+            this.Controls.Add(this.mrcListadoArbol);
             this.Controls.Add(this.mrcElementoEliminado);
             this.Controls.Add(this.mrcNuevoElemento);
-            this.Controls.Add(this.picboxRepGraficaPila);
-            this.Name = "frmPila";
-            this.Text = "frmPila";
-            this.mrcCola.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).EndInit();
+            this.Name = "frmArbolBinario";
+            this.Text = "frmArbolBinario";
+            this.mrcListadoArbol.ResumeLayout(false);
+            this.mrcListadoArbol.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.mrcElementoEliminado.ResumeLayout(false);
             this.mrcElementoEliminado.PerformLayout();
             this.mrcNuevoElemento.ResumeLayout(false);
             this.mrcNuevoElemento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxRepGraficaPila)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox mrcCola;
-        private System.Windows.Forms.ListBox lstPila;
+        private System.Windows.Forms.GroupBox mrcListadoArbol;
+        private System.Windows.Forms.RadioButton optPostOrden;
+        private System.Windows.Forms.RadioButton optPreOrden;
+        private System.Windows.Forms.RadioButton optInOrden;
+        private System.Windows.Forms.DataGridView dgvLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tramite;
         private System.Windows.Forms.GroupBox mrcElementoEliminado;
-        private System.Windows.Forms.Label lblMuestraTramite;
-        private System.Windows.Forms.Label lblMuestraNombre;
-        private System.Windows.Forms.Label lblMuestraCodigo;
+        private System.Windows.Forms.ComboBox cmbCodigo;
         private System.Windows.Forms.Label lblCodigoEliminado;
-        private System.Windows.Forms.Label lblNombreEliminado;
-        private System.Windows.Forms.Label lblTramiteEliminado;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.GroupBox mrcNuevoElemento;
         private System.Windows.Forms.TextBox txtTramiteNuevo;
@@ -314,10 +306,7 @@ namespace PryEDLacamoire
         private System.Windows.Forms.Label lblTramiteNuevo;
         private System.Windows.Forms.Label lblNombreNuevo;
         private System.Windows.Forms.Label lblCodigoNuevo;
-        private System.Windows.Forms.PictureBox picboxRepGraficaPila;
-        private System.Windows.Forms.DataGridView dgvCola;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tramite;
+        private System.Windows.Forms.Button btnEquilibrar;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }

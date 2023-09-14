@@ -16,5 +16,42 @@ namespace PryEDLacamoire
         {
             InitializeComponent();
         }
+
+        private void txtCodigoNuevo_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txtCodigoNuevo.Text != "")
+            {
+                txtNombreNuevo.Enabled = true;
+            }
+            else
+            {
+                txtNombreNuevo.Enabled = false;
+            }
+        }
+
+        private void txtNombreNuevo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombreNuevo.Text != "")
+            {
+                txtTramiteNuevo.Enabled = true;
+            }
+            else
+            {
+                txtTramiteNuevo.Enabled = false;
+            }
+        }
+
+        private void txtTramiteNuevo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTramiteNuevo.Text != "")
+            {
+                btnAgregar.Enabled = true;
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
+            }
+        }
     }
 }

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.mrcCola = new System.Windows.Forms.GroupBox();
-            this.dgvListaDoble = new System.Windows.Forms.DataGridView();
+            this.dgvLista = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lstListaDoble = new System.Windows.Forms.ListBox();
+            this.lstLista = new System.Windows.Forms.ListBox();
             this.mrcElementoEliminado = new System.Windows.Forms.GroupBox();
             this.cmbCodigo = new System.Windows.Forms.ComboBox();
             this.lblCodigoEliminado = new System.Windows.Forms.Label();
@@ -47,17 +47,21 @@
             this.lblNombreNuevo = new System.Windows.Forms.Label();
             this.lblCodigoNuevo = new System.Windows.Forms.Label();
             this.picboxRepGraficaListaDoble = new System.Windows.Forms.PictureBox();
+            this.mrcListarDatos = new System.Windows.Forms.GroupBox();
+            this.optAscendente = new System.Windows.Forms.RadioButton();
+            this.optDescendente = new System.Windows.Forms.RadioButton();
             this.mrcCola.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoble)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.mrcElementoEliminado.SuspendLayout();
             this.mrcNuevoElemento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxRepGraficaListaDoble)).BeginInit();
+            this.mrcListarDatos.SuspendLayout();
             this.SuspendLayout();
             // 
             // mrcCola
             // 
-            this.mrcCola.Controls.Add(this.dgvListaDoble);
-            this.mrcCola.Controls.Add(this.lstListaDoble);
+            this.mrcCola.Controls.Add(this.dgvLista);
+            this.mrcCola.Controls.Add(this.lstLista);
             this.mrcCola.Location = new System.Drawing.Point(6, 240);
             this.mrcCola.Name = "mrcCola";
             this.mrcCola.Size = new System.Drawing.Size(665, 270);
@@ -65,17 +69,17 @@
             this.mrcCola.TabStop = false;
             this.mrcCola.Text = "Listado en una Lista y una Grilla";
             // 
-            // dgvListaDoble
+            // dgvLista
             // 
-            this.dgvListaDoble.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaDoble.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nombre,
             this.Tramite});
-            this.dgvListaDoble.Location = new System.Drawing.Point(227, 19);
-            this.dgvListaDoble.Name = "dgvListaDoble";
-            this.dgvListaDoble.Size = new System.Drawing.Size(432, 240);
-            this.dgvListaDoble.TabIndex = 1;
+            this.dgvLista.Location = new System.Drawing.Point(227, 19);
+            this.dgvLista.Name = "dgvLista";
+            this.dgvLista.Size = new System.Drawing.Size(432, 240);
+            this.dgvLista.TabIndex = 1;
             // 
             // Codigo
             // 
@@ -93,13 +97,13 @@
             this.Tramite.HeaderText = "Tramite";
             this.Tramite.Name = "Tramite";
             // 
-            // lstListaDoble
+            // lstLista
             // 
-            this.lstListaDoble.FormattingEnabled = true;
-            this.lstListaDoble.Location = new System.Drawing.Point(11, 21);
-            this.lstListaDoble.Name = "lstListaDoble";
-            this.lstListaDoble.Size = new System.Drawing.Size(194, 238);
-            this.lstListaDoble.TabIndex = 0;
+            this.lstLista.FormattingEnabled = true;
+            this.lstLista.Location = new System.Drawing.Point(11, 21);
+            this.lstLista.Name = "lstLista";
+            this.lstLista.Size = new System.Drawing.Size(194, 238);
+            this.lstLista.TabIndex = 0;
             // 
             // mrcElementoEliminado
             // 
@@ -108,7 +112,7 @@
             this.mrcElementoEliminado.Controls.Add(this.btnEliminar);
             this.mrcElementoEliminado.Location = new System.Drawing.Point(442, 15);
             this.mrcElementoEliminado.Name = "mrcElementoEliminado";
-            this.mrcElementoEliminado.Size = new System.Drawing.Size(229, 219);
+            this.mrcElementoEliminado.Size = new System.Drawing.Size(229, 108);
             this.mrcElementoEliminado.TabIndex = 10;
             this.mrcElementoEliminado.TabStop = false;
             this.mrcElementoEliminado.Text = "Elemento Eliminado";
@@ -117,7 +121,7 @@
             // 
             this.cmbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodigo.FormattingEnabled = true;
-            this.cmbCodigo.Location = new System.Drawing.Point(83, 79);
+            this.cmbCodigo.Location = new System.Drawing.Point(81, 16);
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(121, 21);
             this.cmbCodigo.TabIndex = 8;
@@ -125,7 +129,7 @@
             // lblCodigoEliminado
             // 
             this.lblCodigoEliminado.AutoSize = true;
-            this.lblCodigoEliminado.Location = new System.Drawing.Point(23, 79);
+            this.lblCodigoEliminado.Location = new System.Drawing.Point(21, 16);
             this.lblCodigoEliminado.Name = "lblCodigoEliminado";
             this.lblCodigoEliminado.Size = new System.Drawing.Size(43, 13);
             this.lblCodigoEliminado.TabIndex = 7;
@@ -133,7 +137,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(26, 143);
+            this.btnEliminar.Location = new System.Drawing.Point(24, 45);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(178, 55);
             this.btnEliminar.TabIndex = 4;
@@ -226,11 +230,45 @@
             this.picboxRepGraficaListaDoble.TabIndex = 8;
             this.picboxRepGraficaListaDoble.TabStop = false;
             // 
+            // mrcListarDatos
+            // 
+            this.mrcListarDatos.Controls.Add(this.optDescendente);
+            this.mrcListarDatos.Controls.Add(this.optAscendente);
+            this.mrcListarDatos.Location = new System.Drawing.Point(442, 126);
+            this.mrcListarDatos.Name = "mrcListarDatos";
+            this.mrcListarDatos.Size = new System.Drawing.Size(229, 108);
+            this.mrcListarDatos.TabIndex = 12;
+            this.mrcListarDatos.TabStop = false;
+            this.mrcListarDatos.Text = "Listar Datos";
+            // 
+            // optAscendente
+            // 
+            this.optAscendente.AutoSize = true;
+            this.optAscendente.Location = new System.Drawing.Point(42, 32);
+            this.optAscendente.Name = "optAscendente";
+            this.optAscendente.Size = new System.Drawing.Size(82, 17);
+            this.optAscendente.TabIndex = 0;
+            this.optAscendente.TabStop = true;
+            this.optAscendente.Text = "Ascendente";
+            this.optAscendente.UseVisualStyleBackColor = true;
+            // 
+            // optDescendente
+            // 
+            this.optDescendente.AutoSize = true;
+            this.optDescendente.Location = new System.Drawing.Point(42, 70);
+            this.optDescendente.Name = "optDescendente";
+            this.optDescendente.Size = new System.Drawing.Size(89, 17);
+            this.optDescendente.TabIndex = 1;
+            this.optDescendente.TabStop = true;
+            this.optDescendente.Text = "Descendente";
+            this.optDescendente.UseVisualStyleBackColor = true;
+            // 
             // frmListaDoble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 515);
+            this.Controls.Add(this.mrcListarDatos);
             this.Controls.Add(this.mrcCola);
             this.Controls.Add(this.mrcElementoEliminado);
             this.Controls.Add(this.mrcNuevoElemento);
@@ -238,12 +276,14 @@
             this.Name = "frmListaDoble";
             this.Text = "frmListaDoble";
             this.mrcCola.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoble)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.mrcElementoEliminado.ResumeLayout(false);
             this.mrcElementoEliminado.PerformLayout();
             this.mrcNuevoElemento.ResumeLayout(false);
             this.mrcNuevoElemento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxRepGraficaListaDoble)).EndInit();
+            this.mrcListarDatos.ResumeLayout(false);
+            this.mrcListarDatos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -251,11 +291,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox mrcCola;
-        private System.Windows.Forms.DataGridView dgvListaDoble;
+        private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tramite;
-        private System.Windows.Forms.ListBox lstListaDoble;
+        private System.Windows.Forms.ListBox lstLista;
         private System.Windows.Forms.GroupBox mrcElementoEliminado;
         private System.Windows.Forms.ComboBox cmbCodigo;
         private System.Windows.Forms.Label lblCodigoEliminado;
@@ -269,5 +309,8 @@
         private System.Windows.Forms.Label lblNombreNuevo;
         private System.Windows.Forms.Label lblCodigoNuevo;
         private System.Windows.Forms.PictureBox picboxRepGraficaListaDoble;
+        private System.Windows.Forms.GroupBox mrcListarDatos;
+        private System.Windows.Forms.RadioButton optDescendente;
+        private System.Windows.Forms.RadioButton optAscendente;
     }
 }
