@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.mrcListadoArbol = new System.Windows.Forms.GroupBox();
-            this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.optPostOrden = new System.Windows.Forms.RadioButton();
+            this.optPreOrden = new System.Windows.Forms.RadioButton();
+            this.optInOrden = new System.Windows.Forms.RadioButton();
+            this.dgvArbolBinario = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,22 +49,21 @@
             this.lblNombreNuevo = new System.Windows.Forms.Label();
             this.lblCodigoNuevo = new System.Windows.Forms.Label();
             this.btnEquilibrar = new System.Windows.Forms.Button();
-            this.optInOrden = new System.Windows.Forms.RadioButton();
-            this.optPreOrden = new System.Windows.Forms.RadioButton();
-            this.optPostOrden = new System.Windows.Forms.RadioButton();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.mrcListadoArbol.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArbolBinario)).BeginInit();
             this.mrcElementoEliminado.SuspendLayout();
             this.mrcNuevoElemento.SuspendLayout();
             this.SuspendLayout();
             // 
             // mrcListadoArbol
             // 
+            this.mrcListadoArbol.Controls.Add(this.btnExportar);
             this.mrcListadoArbol.Controls.Add(this.optPostOrden);
             this.mrcListadoArbol.Controls.Add(this.optPreOrden);
             this.mrcListadoArbol.Controls.Add(this.optInOrden);
-            this.mrcListadoArbol.Controls.Add(this.dgvLista);
+            this.mrcListadoArbol.Controls.Add(this.dgvArbolBinario);
             this.mrcListadoArbol.Location = new System.Drawing.Point(6, 240);
             this.mrcListadoArbol.Name = "mrcListadoArbol";
             this.mrcListadoArbol.Size = new System.Drawing.Size(665, 270);
@@ -69,17 +71,51 @@
             this.mrcListadoArbol.TabStop = false;
             this.mrcListadoArbol.Text = "Listado del Arbol";
             // 
-            // dgvLista
+            // optPostOrden
             // 
-            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.optPostOrden.AutoSize = true;
+            this.optPostOrden.Location = new System.Drawing.Point(16, 113);
+            this.optPostOrden.Name = "optPostOrden";
+            this.optPostOrden.Size = new System.Drawing.Size(78, 17);
+            this.optPostOrden.TabIndex = 4;
+            this.optPostOrden.TabStop = true;
+            this.optPostOrden.Text = "Post-Orden";
+            this.optPostOrden.UseVisualStyleBackColor = true;
+            // 
+            // optPreOrden
+            // 
+            this.optPreOrden.AutoSize = true;
+            this.optPreOrden.Location = new System.Drawing.Point(16, 76);
+            this.optPreOrden.Name = "optPreOrden";
+            this.optPreOrden.Size = new System.Drawing.Size(73, 17);
+            this.optPreOrden.TabIndex = 3;
+            this.optPreOrden.TabStop = true;
+            this.optPreOrden.Text = "Pre-Orden";
+            this.optPreOrden.UseVisualStyleBackColor = true;
+            // 
+            // optInOrden
+            // 
+            this.optInOrden.AutoSize = true;
+            this.optInOrden.Location = new System.Drawing.Point(16, 33);
+            this.optInOrden.Name = "optInOrden";
+            this.optInOrden.Size = new System.Drawing.Size(66, 17);
+            this.optInOrden.TabIndex = 2;
+            this.optInOrden.TabStop = true;
+            this.optInOrden.Text = "In-Orden";
+            this.optInOrden.UseVisualStyleBackColor = true;
+            this.optInOrden.CheckedChanged += new System.EventHandler(this.optInOrden_CheckedChanged);
+            // 
+            // dgvArbolBinario
+            // 
+            this.dgvArbolBinario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArbolBinario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nombre,
             this.Tramite});
-            this.dgvLista.Location = new System.Drawing.Point(227, 19);
-            this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(432, 240);
-            this.dgvLista.TabIndex = 1;
+            this.dgvArbolBinario.Location = new System.Drawing.Point(227, 19);
+            this.dgvArbolBinario.Name = "dgvArbolBinario";
+            this.dgvArbolBinario.Size = new System.Drawing.Size(432, 240);
+            this.dgvArbolBinario.TabIndex = 1;
             // 
             // Codigo
             // 
@@ -159,6 +195,7 @@
             this.txtTramiteNuevo.Name = "txtTramiteNuevo";
             this.txtTramiteNuevo.Size = new System.Drawing.Size(134, 20);
             this.txtTramiteNuevo.TabIndex = 6;
+            this.txtTramiteNuevo.TextChanged += new System.EventHandler(this.txtTramiteNuevo_TextChanged_1);
             // 
             // txtNombreNuevo
             // 
@@ -167,6 +204,7 @@
             this.txtNombreNuevo.Name = "txtNombreNuevo";
             this.txtNombreNuevo.Size = new System.Drawing.Size(134, 20);
             this.txtNombreNuevo.TabIndex = 5;
+            this.txtNombreNuevo.TextChanged += new System.EventHandler(this.txtNombreNuevo_TextChanged_1);
             // 
             // txtCodigoNuevo
             // 
@@ -174,6 +212,7 @@
             this.txtCodigoNuevo.Name = "txtCodigoNuevo";
             this.txtCodigoNuevo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoNuevo.TabIndex = 4;
+            this.txtCodigoNuevo.TextChanged += new System.EventHandler(this.txtCodigoNuevo_TextChanged_1);
             // 
             // btnAgregar
             // 
@@ -184,6 +223,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblTramiteNuevo
             // 
@@ -214,45 +254,12 @@
             // 
             // btnEquilibrar
             // 
-            this.btnEquilibrar.Location = new System.Drawing.Point(480, 158);
+            this.btnEquilibrar.Location = new System.Drawing.Point(480, 143);
             this.btnEquilibrar.Name = "btnEquilibrar";
-            this.btnEquilibrar.Size = new System.Drawing.Size(178, 55);
+            this.btnEquilibrar.Size = new System.Drawing.Size(168, 70);
             this.btnEquilibrar.TabIndex = 17;
             this.btnEquilibrar.Text = "Equilibrar";
             this.btnEquilibrar.UseVisualStyleBackColor = true;
-            // 
-            // optInOrden
-            // 
-            this.optInOrden.AutoSize = true;
-            this.optInOrden.Location = new System.Drawing.Point(16, 53);
-            this.optInOrden.Name = "optInOrden";
-            this.optInOrden.Size = new System.Drawing.Size(66, 17);
-            this.optInOrden.TabIndex = 2;
-            this.optInOrden.TabStop = true;
-            this.optInOrden.Text = "In-Orden";
-            this.optInOrden.UseVisualStyleBackColor = true;
-            // 
-            // optPreOrden
-            // 
-            this.optPreOrden.AutoSize = true;
-            this.optPreOrden.Location = new System.Drawing.Point(16, 113);
-            this.optPreOrden.Name = "optPreOrden";
-            this.optPreOrden.Size = new System.Drawing.Size(73, 17);
-            this.optPreOrden.TabIndex = 3;
-            this.optPreOrden.TabStop = true;
-            this.optPreOrden.Text = "Pre-Orden";
-            this.optPreOrden.UseVisualStyleBackColor = true;
-            // 
-            // optPostOrden
-            // 
-            this.optPostOrden.AutoSize = true;
-            this.optPostOrden.Location = new System.Drawing.Point(16, 182);
-            this.optPostOrden.Name = "optPostOrden";
-            this.optPostOrden.Size = new System.Drawing.Size(78, 17);
-            this.optPostOrden.TabIndex = 4;
-            this.optPostOrden.TabStop = true;
-            this.optPostOrden.Text = "Post-Orden";
-            this.optPostOrden.UseVisualStyleBackColor = true;
             // 
             // treeView1
             // 
@@ -260,6 +267,16 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(217, 231);
             this.treeView1.TabIndex = 18;
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.Enabled = false;
+            this.btnExportar.Location = new System.Drawing.Point(37, 172);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(134, 40);
+            this.btnExportar.TabIndex = 5;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseVisualStyleBackColor = true;
             // 
             // frmArbolBinario
             // 
@@ -275,7 +292,7 @@
             this.Text = "frmArbolBinario";
             this.mrcListadoArbol.ResumeLayout(false);
             this.mrcListadoArbol.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArbolBinario)).EndInit();
             this.mrcElementoEliminado.ResumeLayout(false);
             this.mrcElementoEliminado.PerformLayout();
             this.mrcNuevoElemento.ResumeLayout(false);
@@ -290,7 +307,7 @@
         private System.Windows.Forms.RadioButton optPostOrden;
         private System.Windows.Forms.RadioButton optPreOrden;
         private System.Windows.Forms.RadioButton optInOrden;
-        private System.Windows.Forms.DataGridView dgvLista;
+        private System.Windows.Forms.DataGridView dgvArbolBinario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tramite;
@@ -308,5 +325,6 @@
         private System.Windows.Forms.Label lblCodigoNuevo;
         private System.Windows.Forms.Button btnEquilibrar;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Button btnExportar;
     }
 }

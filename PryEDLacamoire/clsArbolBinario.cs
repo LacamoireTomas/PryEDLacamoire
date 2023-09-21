@@ -62,7 +62,7 @@ namespace PryEDLacamoire
 
         //Metodos
 
-        public void Recorrer(DataGridView Grilla)
+        public void RecorrerInOrdenAsc(DataGridView Grilla)
         {
             Grilla.Rows.Clear();
             InOrdenAsc(Grilla, Raiz);
@@ -71,18 +71,44 @@ namespace PryEDLacamoire
 
         private void InOrdenAsc(DataGridView dgv, clsNodo R)
         {
-            if (R.Izquierdo != null)
-            {
-                InOrdenAsc(dgv, R.Izquierdo);
-                dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite); ;
-
-            }
-            if (R.Derecho != null)
-            {
-                InOrdenAsc(dgv, R.Derecho);
-            }
-                
+            if (R.Izquierdo != null) InOrdenAsc(dgv, R.Izquierdo);
+            dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite); 
+            if (R.Derecho != null) InOrdenAsc(dgv, R.Derecho);
+                    
         }
+
+        public void RecorrerPreOrdenAsc(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            PreOrdenAsc(Grilla, Raiz);
+
+        }
+
+        private void PreOrdenAsc(DataGridView dgv, clsNodo R)
+        {
+            dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
+            if (R.Izquierdo != null) PreOrdenAsc(dgv, R.Izquierdo);     
+            if (R.Derecho != null) PreOrdenAsc(dgv, R.Derecho);
+
+        }
+
+        public void RecorrerPostOrdenAsc(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            PostOrdenAsc(Grilla, Raiz);
+
+        }
+
+        private void PostOrdenAsc(DataGridView dgv, clsNodo R)
+        {
+            if (R.Izquierdo != null) PostOrdenAsc(dgv, R.Izquierdo);
+            if (R.Derecho != null) PostOrdenAsc(dgv, R.Derecho);
+            dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
+
+        }
+
+        <   
+
 
     }    
 }
