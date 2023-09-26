@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PryEDLacamoire
 {
@@ -107,7 +108,7 @@ namespace PryEDLacamoire
             }
         }
 
-        public void Recorrer(ListBox Lista)
+        public void RecorrerAsc(ListBox Lista)
         {
             clsNodo aux = Primero;
             Lista.Items.Clear();
@@ -118,7 +119,7 @@ namespace PryEDLacamoire
             }
         }
 
-        public void Recorrer(ComboBox Combo)
+        public void RecorrerAsc(ComboBox Combo)
         {
             clsNodo aux = Primero;
             Combo.Items.Clear();
@@ -128,7 +129,7 @@ namespace PryEDLacamoire
                 aux = aux.Siguiente;
             }
         }
-        public void Recorrer(DataGridView Grilla)
+        public void RecorrerAsc(DataGridView Grilla)
         {
             clsNodo aux = Primero;
             Grilla.Rows.Clear();
@@ -137,6 +138,53 @@ namespace PryEDLacamoire
                 Grilla.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
                 aux = aux.Siguiente;
             }
+        }
+
+        public void RecorrerAsc()
+        {
+            clsNodo aux = Primero;
+            StreamWriter AD = new StreamWriter("ListaDobleAsc.csv", false, Encoding.UTF8);
+            AD.WriteLine("Lista de personas\n");
+            AD.WriteLine("Codigo;Nombre;Tramite\n");
+            while (aux != null)
+            {
+                AD.WriteLine(aux.Codigo);
+                AD.WriteLine(";");
+                AD.WriteLine(aux.Nombre);
+                AD.WriteLine(";");
+                AD.Write(aux.Tramite);
+                aux = aux.Siguiente;
+            }
+            AD.Close();
+        }
+
+        public void Recorrer(ComboBox Lista)
+        {
+            clsNodo aux = Primero;
+            Lista.Items.Clear();
+            while (aux != null)
+            {
+                Lista.Items.Add(aux.Codigo);
+                aux = aux.Siguiente;
+            }
+        }
+
+        public void RecorrerDes()
+        {
+            clsNodo aux = Ultimo;
+            StreamWriter AD = new StreamWriter("ListaDobleDes.csv", false, Encoding.UTF8);
+            AD.WriteLine("Lista de personas\n");
+            AD.WriteLine("Codigo;Nombre;Tramite\n");
+            while (aux != null)
+            {
+                AD.WriteLine(aux.Codigo);
+                AD.WriteLine(";");
+                AD.WriteLine(aux.Nombre);
+                AD.WriteLine(";");
+                AD.Write(aux.Tramite);
+                aux = aux.Anterior;
+            }
+            AD.Close();
         }
         public void RecorrerDes(DataGridView Grilla)
         {
@@ -170,4 +218,6 @@ namespace PryEDLacamoire
             }
         }
     }
+
+   
 }//

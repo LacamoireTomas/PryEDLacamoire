@@ -38,7 +38,7 @@
             // lblDNI
             // 
             this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(214, 49);
+            this.lblDNI.Location = new System.Drawing.Point(214, 35);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(80, 13);
             this.lblDNI.TabIndex = 2;
@@ -47,7 +47,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(214, 90);
+            this.lblNombre.Location = new System.Drawing.Point(214, 78);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(134, 13);
             this.lblNombre.TabIndex = 3;
@@ -56,7 +56,7 @@
             // lblMateria
             // 
             this.lblMateria.AutoSize = true;
-            this.lblMateria.Location = new System.Drawing.Point(214, 128);
+            this.lblMateria.Location = new System.Drawing.Point(214, 118);
             this.lblMateria.Name = "lblMateria";
             this.lblMateria.Size = new System.Drawing.Size(147, 13);
             this.lblMateria.TabIndex = 4;
@@ -64,11 +64,11 @@
             // 
             // picboxFoto
             // 
-            this.picboxFoto.BackgroundImage = global::PryEDLacamoire.Properties.Resources.foto;
+            this.picboxFoto.BackgroundImage = global::PryEDLacamoire.Properties.Resources.Captura_de_pantalla_2022_08_27_1518131;
             this.picboxFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picboxFoto.Location = new System.Drawing.Point(12, 21);
+            this.picboxFoto.Location = new System.Drawing.Point(30, 25);
             this.picboxFoto.Name = "picboxFoto";
-            this.picboxFoto.Size = new System.Drawing.Size(161, 185);
+            this.picboxFoto.Size = new System.Drawing.Size(124, 116);
             this.picboxFoto.TabIndex = 0;
             this.picboxFoto.TabStop = false;
             // 
@@ -76,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 485);
+            this.ClientSize = new System.Drawing.Size(417, 172);
             this.Controls.Add(this.lblMateria);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblDNI);

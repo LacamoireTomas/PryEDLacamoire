@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.mrcListadoArbol = new System.Windows.Forms.GroupBox();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.optPostOrden = new System.Windows.Forms.RadioButton();
             this.optPreOrden = new System.Windows.Forms.RadioButton();
             this.optInOrden = new System.Windows.Forms.RadioButton();
@@ -50,7 +51,6 @@
             this.lblCodigoNuevo = new System.Windows.Forms.Label();
             this.btnEquilibrar = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.btnExportar = new System.Windows.Forms.Button();
             this.mrcListadoArbol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArbolBinario)).BeginInit();
             this.mrcElementoEliminado.SuspendLayout();
@@ -70,6 +70,16 @@
             this.mrcListadoArbol.TabIndex = 16;
             this.mrcListadoArbol.TabStop = false;
             this.mrcListadoArbol.Text = "Listado del Arbol";
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.Enabled = false;
+            this.btnExportar.Location = new System.Drawing.Point(37, 172);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(134, 40);
+            this.btnExportar.TabIndex = 5;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseVisualStyleBackColor = true;
             // 
             // optPostOrden
             // 
@@ -268,20 +278,11 @@
             this.treeView1.Size = new System.Drawing.Size(217, 231);
             this.treeView1.TabIndex = 18;
             // 
-            // btnExportar
-            // 
-            this.btnExportar.Enabled = false;
-            this.btnExportar.Location = new System.Drawing.Point(37, 172);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(134, 40);
-            this.btnExportar.TabIndex = 5;
-            this.btnExportar.Text = "Exportar";
-            this.btnExportar.UseVisualStyleBackColor = true;
-            // 
             // frmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(676, 515);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.btnEquilibrar);
@@ -289,6 +290,7 @@
             this.Controls.Add(this.mrcElementoEliminado);
             this.Controls.Add(this.mrcNuevoElemento);
             this.Name = "frmArbolBinario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmArbolBinario";
             this.mrcListadoArbol.ResumeLayout(false);
             this.mrcListadoArbol.PerformLayout();

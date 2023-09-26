@@ -35,6 +35,7 @@
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstListaSimple = new System.Windows.Forms.ListBox();
             this.mrcElementoEliminado = new System.Windows.Forms.GroupBox();
+            this.cmbCodigo = new System.Windows.Forms.ComboBox();
             this.lblCodigoEliminado = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.mrcNuevoElemento = new System.Windows.Forms.GroupBox();
@@ -46,7 +47,6 @@
             this.lblNombreNuevo = new System.Windows.Forms.Label();
             this.lblCodigoNuevo = new System.Windows.Forms.Label();
             this.picboxRepGraficaListaSimple = new System.Windows.Forms.PictureBox();
-            this.cmbCodigo = new System.Windows.Forms.ComboBox();
             this.mrcCola.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaSimple)).BeginInit();
             this.mrcElementoEliminado.SuspendLayout();
@@ -113,6 +113,16 @@
             this.mrcElementoEliminado.TabStop = false;
             this.mrcElementoEliminado.Text = "Elemento Eliminado";
             // 
+            // cmbCodigo
+            // 
+            this.cmbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCodigo.FormattingEnabled = true;
+            this.cmbCodigo.Location = new System.Drawing.Point(83, 79);
+            this.cmbCodigo.Name = "cmbCodigo";
+            this.cmbCodigo.Size = new System.Drawing.Size(121, 21);
+            this.cmbCodigo.TabIndex = 8;
+            this.cmbCodigo.SelectedIndexChanged += new System.EventHandler(this.cmbCodigo_SelectedIndexChanged);
+            // 
             // lblCodigoEliminado
             // 
             this.lblCodigoEliminado.AutoSize = true;
@@ -130,6 +140,7 @@
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // mrcNuevoElemento
             // 
@@ -154,6 +165,7 @@
             this.txtTramiteNuevo.Name = "txtTramiteNuevo";
             this.txtTramiteNuevo.Size = new System.Drawing.Size(134, 20);
             this.txtTramiteNuevo.TabIndex = 6;
+            this.txtTramiteNuevo.TextChanged += new System.EventHandler(this.txtTramiteNuevo_TextChanged_1);
             // 
             // txtNombreNuevo
             // 
@@ -162,6 +174,7 @@
             this.txtNombreNuevo.Name = "txtNombreNuevo";
             this.txtNombreNuevo.Size = new System.Drawing.Size(134, 20);
             this.txtNombreNuevo.TabIndex = 5;
+            this.txtNombreNuevo.TextChanged += new System.EventHandler(this.txtNombreNuevo_TextChanged_1);
             // 
             // txtCodigoNuevo
             // 
@@ -169,6 +182,7 @@
             this.txtCodigoNuevo.Name = "txtCodigoNuevo";
             this.txtCodigoNuevo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoNuevo.TabIndex = 4;
+            this.txtCodigoNuevo.TextChanged += new System.EventHandler(this.txtCodigoNuevo_TextChanged_1);
             // 
             // btnAgregar
             // 
@@ -218,19 +232,11 @@
             this.picboxRepGraficaListaSimple.TabIndex = 4;
             this.picboxRepGraficaListaSimple.TabStop = false;
             // 
-            // cmbCodigo
-            // 
-            this.cmbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCodigo.FormattingEnabled = true;
-            this.cmbCodigo.Location = new System.Drawing.Point(83, 79);
-            this.cmbCodigo.Name = "cmbCodigo";
-            this.cmbCodigo.Size = new System.Drawing.Size(121, 21);
-            this.cmbCodigo.TabIndex = 8;
-            // 
             // frmListaSimple
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(676, 515);
             this.Controls.Add(this.mrcCola);
             this.Controls.Add(this.mrcElementoEliminado);

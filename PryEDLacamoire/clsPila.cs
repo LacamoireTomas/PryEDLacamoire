@@ -25,7 +25,7 @@ namespace PryEDLacamoire
         {
             if (Primero !=null)
             {
-                Nuevo.Siguiente = Nuevo;
+                Nuevo.Siguiente = Primero;
             }
             Primero = Nuevo;
         }

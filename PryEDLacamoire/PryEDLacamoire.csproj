@@ -150,6 +150,8 @@
     <Content Include="Resources\01 ListasSimplementeEnlazadas.jpg" />
     <None Include="Resources\01 ListasSimplementeEnlazadas1.jpg" />
     <None Include="Resources\ListaDoblementeEnlazada.jpg" />
+    <None Include="Resources\Captura de pantalla 2022-08-27 151813.png" />
+    <None Include="Resources\Captura de pantalla 2022-08-27 1518131.png" />
     <Content Include="Resources\Pilas en c++.jpg" />
     <None Include="Resources\Pilas en c++1.jpg" />
     <Content Include="Resources\RepGraficaCola.png" />

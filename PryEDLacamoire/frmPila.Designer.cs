@@ -30,7 +30,7 @@ namespace PryEDLacamoire
         private void InitializeComponent()
         {
             this.mrcCola = new System.Windows.Forms.GroupBox();
-            this.dgvCola = new System.Windows.Forms.DataGridView();
+            this.dgvPila = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,7 @@ namespace PryEDLacamoire
             this.lblCodigoNuevo = new System.Windows.Forms.Label();
             this.picboxRepGraficaPila = new System.Windows.Forms.PictureBox();
             this.mrcCola.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPila)).BeginInit();
             this.mrcElementoEliminado.SuspendLayout();
             this.mrcNuevoElemento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxRepGraficaPila)).BeginInit();
@@ -61,7 +61,7 @@ namespace PryEDLacamoire
             // 
             // mrcCola
             // 
-            this.mrcCola.Controls.Add(this.dgvCola);
+            this.mrcCola.Controls.Add(this.dgvPila);
             this.mrcCola.Controls.Add(this.lstPila);
             this.mrcCola.Location = new System.Drawing.Point(6, 240);
             this.mrcCola.Name = "mrcCola";
@@ -70,17 +70,17 @@ namespace PryEDLacamoire
             this.mrcCola.TabStop = false;
             this.mrcCola.Text = "Listado en una Lista y una Grilla";
             // 
-            // dgvCola
+            // dgvPila
             // 
-            this.dgvCola.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCola.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPila.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPila.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nombre,
             this.Tramite});
-            this.dgvCola.Location = new System.Drawing.Point(218, 21);
-            this.dgvCola.Name = "dgvCola";
-            this.dgvCola.Size = new System.Drawing.Size(432, 240);
-            this.dgvCola.TabIndex = 2;
+            this.dgvPila.Location = new System.Drawing.Point(218, 21);
+            this.dgvPila.Name = "dgvPila";
+            this.dgvPila.Size = new System.Drawing.Size(432, 240);
+            this.dgvPila.TabIndex = 2;
             // 
             // Codigo
             // 
@@ -181,6 +181,7 @@ namespace PryEDLacamoire
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // mrcNuevoElemento
             // 
@@ -233,6 +234,7 @@ namespace PryEDLacamoire
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblTramiteNuevo
             // 
@@ -282,9 +284,10 @@ namespace PryEDLacamoire
             this.Controls.Add(this.mrcNuevoElemento);
             this.Controls.Add(this.picboxRepGraficaPila);
             this.Name = "frmPila";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPila";
             this.mrcCola.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPila)).EndInit();
             this.mrcElementoEliminado.ResumeLayout(false);
             this.mrcElementoEliminado.PerformLayout();
             this.mrcNuevoElemento.ResumeLayout(false);
@@ -315,7 +318,7 @@ namespace PryEDLacamoire
         private System.Windows.Forms.Label lblNombreNuevo;
         private System.Windows.Forms.Label lblCodigoNuevo;
         private System.Windows.Forms.PictureBox picboxRepGraficaPila;
-        private System.Windows.Forms.DataGridView dgvCola;
+        private System.Windows.Forms.DataGridView dgvPila;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tramite;

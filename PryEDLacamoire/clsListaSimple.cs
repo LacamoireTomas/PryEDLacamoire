@@ -23,13 +23,14 @@ namespace PryEDLacamoire
         //Metodos
         public void Agregar(clsNodo Nuevo)
         {
-            if (Primero != null)
+
+            if (Primero == null)
             {
                 Primero = Nuevo;
             }
             else
             {
-                if (Nuevo.Codigo >= Primero.Codigo)
+                if (Nuevo.Codigo <= Primero.Codigo)
                 {
                     Nuevo.Siguiente = Primero;
                     Primero = Nuevo;
@@ -50,9 +51,7 @@ namespace PryEDLacamoire
                     ant.Siguiente = Nuevo;
                     Nuevo.Siguiente = aux;
                 }
-
-
-            }  
+            }
         }
         public void Recorrer()
         {
@@ -72,6 +71,17 @@ namespace PryEDLacamoire
             }
             AD.Close();
 
+        }
+
+        public void Recorrer(ComboBox Lista)
+        {
+            clsNodo aux = Primero;
+            Lista.Items.Clear();
+            while (aux != null)
+            {
+                Lista.Items.Add(aux.Codigo);
+                aux = aux.Siguiente;
+            }
         }
 
         public void Recorrer(DataGridView Grilla)

@@ -16,7 +16,7 @@ namespace PryEDLacamoire
         {
             InitializeComponent();
         }
-
+        clsPila FilaDePersonas = new clsPila();
         private void txtCodigoNuevo_TextChanged(object sender, EventArgs e)
         {
 
@@ -51,6 +51,43 @@ namespace PryEDLacamoire
             else
             {
                 btnAgregar.Enabled = false;
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            clsNodo ObjNodo = new clsNodo();
+            ObjNodo.Codigo = Convert.ToInt32(txtCodigoNuevo.Text);
+            ObjNodo.Nombre = txtNombreNuevo.Text;
+            ObjNodo.Tramite = txtTramiteNuevo.Text;
+            FilaDePersonas.Agregar(ObjNodo);
+            FilaDePersonas.Recorrer(dgvPila);
+            FilaDePersonas.Recorrer(lstPila);
+            FilaDePersonas.Recorrer();
+
+            txtCodigoNuevo.Text = "";
+            txtNombreNuevo.Text = "";
+            txtTramiteNuevo.Text = "";
+            
+        }
+        //
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (FilaDePersonas.Primero != null)
+            {
+                lblMuestraCodigo.Text = FilaDePersonas.Primero.Codigo.ToString();
+                lblMuestraNombre.Text = FilaDePersonas.Primero.Nombre;
+                lblMuestraTramite.Text = FilaDePersonas.Primero.Tramite;
+                FilaDePersonas.Eliminar();
+                FilaDePersonas.Recorrer(dgvPila);
+                FilaDePersonas.Recorrer(lstPila);
+                FilaDePersonas.Recorrer();
+            }
+            else
+            {
+                lblCodigoNuevo.Text = "";
+                lblNombreNuevo.Text = "";
+                lblTramiteNuevo.Text = "";
             }
         }
     }
