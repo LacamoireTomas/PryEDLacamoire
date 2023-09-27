@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PryEDLacamoire
 {
@@ -23,22 +24,21 @@ namespace PryEDLacamoire
 
         public void Agregar(clsNodo Nvo)
         {
-            Nvo.Izquierdo = null; Nvo.Derecho = null;
+            Nvo.Izquierdo = null;
+            Nvo.Derecho = null;
             if (Raiz == null)
             {
                 Raiz = Nvo;
             }
-
             else
             {
-                clsNodo NodoPadre = Raiz; //ant
+                clsNodo NodoPadre = Raiz;
                 clsNodo Aux = Raiz;
                 while (Aux != null)
                 {
                     NodoPadre = Aux;
-                    if (Nvo.Codigo > Aux.Codigo)
+                    if (Nvo.Codigo < Aux.Codigo)
                     {
-
                         Aux = Aux.Izquierdo;
                     }
                     else
@@ -46,7 +46,6 @@ namespace PryEDLacamoire
                         Aux = Aux.Derecho;
                     }
                 }
-                //Afuera del while
                 if (Nvo.Codigo < NodoPadre.Codigo)
                 {
                     NodoPadre.Izquierdo = Nvo;
@@ -54,7 +53,6 @@ namespace PryEDLacamoire
                 else
                 {
                     NodoPadre.Derecho = Nvo;
-
                 }
             }
         }
@@ -76,7 +74,18 @@ namespace PryEDLacamoire
             if (R.Derecho != null) InOrdenAsc(dgv, R.Derecho);
                     
         }
-
+        private void InOrdenAsc(ComboBox Lst, clsNodo R)
+        {
+            if (R.Izquierdo != null)
+            {
+                InOrdenAsc(Lst, R.Izquierdo);
+            }
+            Lst.Items.Add(R.Codigo);
+            if (R.Derecho != null)
+            {
+                InOrdenAsc(Lst, R.Derecho);
+            }
+        }
         public void RecorrerPreOrdenAsc(DataGridView Grilla)
         {
             Grilla.Rows.Clear();
@@ -97,6 +106,33 @@ namespace PryEDLacamoire
             Grilla.Rows.Clear();
             PostOrdenAsc(Grilla, Raiz);
 
+        }
+
+        public void Recorrer(ComboBox Lista)
+        {
+            Lista.Items.Clear();
+            InOrdenAsc(Lista, Raiz);
+        }
+        private void PreOrden(clsNodo R, TreeNode nodoTreeView)
+        {
+            TreeNode NodoPadre = new TreeNode(R.Codigo.ToString());
+            nodoTreeView.Nodes.Add(NodoPadre);
+            if (R.Izquierdo != null)
+            {
+                PreOrden(R.Izquierdo, NodoPadre);
+            }
+            if (R.Derecho != null)
+            {
+                PreOrden(R.Derecho, NodoPadre);
+            }
+        }
+        public void Recorrer(TreeView tree)
+        {
+            tree.Nodes.Clear();
+            TreeNode NodoPadre = new TreeNode("Arbol");
+            tree.Nodes.Add(NodoPadre);
+            PreOrden(Raiz, NodoPadre);
+            tree.ExpandAll();
         }
 
         private void PostOrdenAsc(DataGridView dgv, clsNodo R)
@@ -162,7 +198,89 @@ namespace PryEDLacamoire
                 GrabarVectorInOrden(NodoPadre.Derecho, Codigo);
             }
         }
-       
+
+        public void ExportarIn(DataGridView Grilla)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("arbolInOrden.txt", false))
+                {
+                    foreach (DataGridViewRow row in Grilla.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            // Escribe el valor de la celda en el archivo de texto
+                            writer.Write(cell.Value + "\t");
+                        }
+                        writer.WriteLine(); // Salta a la siguiente línea
+                    }
+                }
+                MessageBox.Show("Datos guardados en el archivo de texto correctamente.");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar los datos: " + ex.Message);
+            }
+
+        }
+
+        public void ExportarPre(DataGridView Grilla)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("arbolPreOrden.txt", false))
+                {
+                    foreach (DataGridViewRow row in Grilla.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            // Escribe el valor de la celda en el archivo de texto
+                            writer.Write(cell.Value + "\t");
+                        }
+                        writer.WriteLine(); // Salta a la siguiente línea
+                    }
+                }
+                MessageBox.Show("Datos guardados en el archivo de texto correctamente.");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar los datos: " + ex.Message);
+            }
+
+        }
+
+        public void ExportarPost(DataGridView Grilla)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("arbolPostOrden.txt", false))
+                {
+                    foreach (DataGridViewRow row in Grilla.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            // Escribe el valor de la celda en el archivo de texto
+                            writer.Write(cell.Value + "\t");
+                        }
+                        writer.WriteLine(); // Salta a la siguiente línea
+                    }
+                }
+                MessageBox.Show("Datos guardados en el archivo de texto correctamente.");
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar los datos: " + ex.Message);
+            }
+
+        }
+
 
 
 

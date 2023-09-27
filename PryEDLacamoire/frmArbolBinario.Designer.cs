@@ -73,13 +73,13 @@
             // 
             // btnExportar
             // 
-            this.btnExportar.Enabled = false;
             this.btnExportar.Location = new System.Drawing.Point(37, 172);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(134, 40);
             this.btnExportar.TabIndex = 5;
             this.btnExportar.Text = "Exportar";
             this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // optPostOrden
             // 
@@ -91,6 +91,7 @@
             this.optPostOrden.TabStop = true;
             this.optPostOrden.Text = "Post-Orden";
             this.optPostOrden.UseVisualStyleBackColor = true;
+            this.optPostOrden.CheckedChanged += new System.EventHandler(this.optPostOrden_CheckedChanged);
             // 
             // optPreOrden
             // 
@@ -102,6 +103,7 @@
             this.optPreOrden.TabStop = true;
             this.optPreOrden.Text = "Pre-Orden";
             this.optPreOrden.UseVisualStyleBackColor = true;
+            this.optPreOrden.CheckedChanged += new System.EventHandler(this.optPreOrden_CheckedChanged);
             // 
             // optInOrden
             // 
@@ -163,6 +165,7 @@
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(121, 21);
             this.cmbCodigo.TabIndex = 8;
+            this.cmbCodigo.SelectedIndexChanged += new System.EventHandler(this.cmbCodigo_SelectedIndexChanged);
             // 
             // lblCodigoEliminado
             // 
@@ -181,6 +184,7 @@
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // mrcNuevoElemento
             // 
@@ -270,6 +274,7 @@
             this.btnEquilibrar.TabIndex = 17;
             this.btnEquilibrar.Text = "Equilibrar";
             this.btnEquilibrar.UseVisualStyleBackColor = true;
+            this.btnEquilibrar.Click += new System.EventHandler(this.btnEquilibrar_Click);
             // 
             // treeView1
             // 

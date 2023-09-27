@@ -27,9 +27,11 @@ namespace PryEDLacamoire
 
                 FilaDePersonas.Agregar(ObjNodo);
                 FilaDePersonas.RecorrerInOrdenAsc(dgvArbolBinario);
-                
+                FilaDePersonas.Recorrer(treeView1);
+                FilaDePersonas.Recorrer(cmbCodigo);
 
-                txtCodigoNuevo.Text = "";
+
+            txtCodigoNuevo.Text = "";
                 txtNombreNuevo.Text = "";
                 txtTramiteNuevo.Text = "";
            
@@ -75,8 +77,69 @@ namespace PryEDLacamoire
 
         private void optInOrden_CheckedChanged(object sender, EventArgs e)
         {
-          //clsArbolBinario  clsArbolBinario = new clsArbolBinario;
+            FilaDePersonas.RecorrerInOrdenAsc(dgvArbolBinario);
           
+        }
+
+        private void optPreOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            FilaDePersonas.RecorrerPreOrdenAsc(dgvArbolBinario);
+        }
+
+        private void optPostOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            FilaDePersonas.RecorrerPostOrdenAsc(dgvArbolBinario);
+        }
+
+        private void btnEquilibrar_Click(object sender, EventArgs e)
+        {
+            FilaDePersonas.Equilibrar();
+            FilaDePersonas.RecorrerInOrdenAsc(dgvArbolBinario);
+            FilaDePersonas.Recorrer(treeView1);
+            FilaDePersonas.Recorrer(cmbCodigo);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            FilaDePersonas.Eliminar(Convert.ToInt32(cmbCodigo.Text));
+            FilaDePersonas.RecorrerInOrdenAsc(dgvArbolBinario);
+            FilaDePersonas.Recorrer(treeView1);
+            FilaDePersonas.Recorrer(cmbCodigo);
+            btnEliminar.Enabled = false;
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            if (optInOrden.Checked)
+            {
+                FilaDePersonas.ExportarIn(dgvArbolBinario);
+            }
+            else
+            {
+                if (optPreOrden.Checked)
+                {
+                    FilaDePersonas.ExportarPre(dgvArbolBinario);
+                }
+                else
+                {
+                    if (optPostOrden.Checked)
+                    {
+                        FilaDePersonas.ExportarPost(dgvArbolBinario);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione una opcion de ordenamiento", "", MessageBoxButtons.OK);
+                    }
+                }
+            }
+        }
+
+        private void cmbCodigo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCodigo.SelectedIndex != -1)
+            {
+                btnEliminar.Enabled = true;
+            }
         }
     }
 }
