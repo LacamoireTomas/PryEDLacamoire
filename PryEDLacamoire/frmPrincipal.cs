@@ -54,5 +54,10 @@ namespace PryEDLacamoire
             frmArbolBinario frmArbolBinario = new frmArbolBinario();
             frmArbolBinario.Show();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

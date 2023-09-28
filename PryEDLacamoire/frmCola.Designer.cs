@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCola));
             this.mrcNuevoElemento = new System.Windows.Forms.GroupBox();
             this.txtTramiteNuevo = new System.Windows.Forms.TextBox();
             this.txtNombreNuevo = new System.Windows.Forms.TextBox();
@@ -282,6 +283,7 @@
             this.Controls.Add(this.mrcElementoEliminado);
             this.Controls.Add(this.mrcNuevoElemento);
             this.Controls.Add(this.picboxRepGraficaCola);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCola";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinámica no Lineal - Cola";

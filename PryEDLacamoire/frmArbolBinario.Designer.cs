@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArbolBinario));
             this.mrcListadoArbol = new System.Windows.Forms.GroupBox();
             this.btnExportar = new System.Windows.Forms.Button();
             this.optPostOrden = new System.Windows.Forms.RadioButton();
@@ -294,6 +295,7 @@
             this.Controls.Add(this.mrcListadoArbol);
             this.Controls.Add(this.mrcElementoEliminado);
             this.Controls.Add(this.mrcNuevoElemento);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmArbolBinario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmArbolBinario";
