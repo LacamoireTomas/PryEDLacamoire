@@ -18,7 +18,7 @@ namespace PryEDLacamoire
         private string CadenaConexion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Libreria.mdb";
         private string varCadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Libreria.mdb";
         
-
+        //
         public void Listar (DataGridView Grilla)
         {
             try
