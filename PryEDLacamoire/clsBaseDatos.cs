@@ -33,6 +33,39 @@ namespace PryEDLacamoire
                 //tabla en la ram
                 DataSet DS = new DataSet();
                 adaptador = new OleDbDataAdapter(comando);
+                adaptador.Fill(DS, "Tabla1");
+
+                Grilla.DataSource = null;
+                Grilla.DataSource = DS.Tables["Tabla1"];
+
+
+
+                conexion.Close();
+
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+                conexion.Close();
+               
+            }
+        }
+
+        public void Listar(DataGridView Grilla, String varInstruccionSQL)
+        {
+            try
+            {
+                conexion.ConnectionString = varCadenaConexion;
+                conexion.Open();
+
+                comando.Connection = conexion; 
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = varInstruccionSQL;
+
+                //tabla en la ram
+                DataSet DS = new DataSet();
+                adaptador = new OleDbDataAdapter(comando);
                 adaptador.Fill(DS, "Resultado");
 
                 Grilla.DataSource = null;
@@ -48,7 +81,7 @@ namespace PryEDLacamoire
 
                 MessageBox.Show(e.Message);
                 conexion.Close();
-               
+
             }
         }
 
