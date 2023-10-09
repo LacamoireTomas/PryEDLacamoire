@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -181,6 +181,9 @@
     <None Include="Resources\Captura de pantalla 2022-08-27 151813.png" />
     <None Include="Resources\Captura de pantalla 2022-08-27 1518131.png" />
     <Content Include="Resources\IconoED.ico" />
+    <Content Include="Resources\Libreria.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Pilas en c++.jpg" />
     <None Include="Resources\Pilas en c++1.jpg" />
     <Content Include="Resources\RepGraficaCola.png" />

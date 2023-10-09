@@ -30,6 +30,9 @@
         {
             this.lblConsultaSql = new System.Windows.Forms.Label();
             this.btnListar = new System.Windows.Forms.Button();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.txtSql = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblConsultaSql
@@ -50,6 +53,23 @@
             this.btnListar.TabIndex = 1;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
+            // dgvDatos
+            // 
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Location = new System.Drawing.Point(17, 251);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.Size = new System.Drawing.Size(647, 252);
+            this.dgvDatos.TabIndex = 2;
+            // 
+            // txtSql
+            // 
+            this.txtSql.Location = new System.Drawing.Point(17, 36);
+            this.txtSql.Multiline = true;
+            this.txtSql.Name = "txtSql";
+            this.txtSql.Size = new System.Drawing.Size(644, 180);
+            this.txtSql.TabIndex = 4;
             // 
             // frmConsultaBaseDatos
             // 
@@ -57,10 +77,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(676, 515);
+            this.Controls.Add(this.txtSql);
+            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.lblConsultaSql);
             this.Name = "frmConsultaBaseDatos";
             this.Text = "frmConsultaBaseDatos";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -70,5 +93,7 @@
 
         private System.Windows.Forms.Label lblConsultaSql;
         private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.TextBox txtSql;
     }
 }

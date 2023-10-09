@@ -59,5 +59,23 @@ namespace PryEDLacamoire
         {
             this.Close();
         }
+
+        private void operacionesConTablasDeBasesDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaseDatos frmBaseDatos = new frmBaseDatos();
+            frmBaseDatos.Show();
+        }
+
+        private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaBaseDatos frmConsultaBaseDatos = new frmConsultaBaseDatos();
+            frmConsultaBaseDatos.Show();
+        }
+
+        private void repasoDeOperacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRepasoOperaciones frm = new frmRepasoOperaciones();
+            frm.Show();
+        }
     }
 }

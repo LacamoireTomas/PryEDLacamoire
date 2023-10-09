@@ -31,6 +31,9 @@
             this.lblOperacion = new System.Windows.Forms.Label();
             this.cmbOperacion = new System.Windows.Forms.ComboBox();
             this.btnListar = new System.Windows.Forms.Button();
+            this.lblRepasoOperaciones = new System.Windows.Forms.Label();
+            this.dgvRepasoOperaciones = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRepasoOperaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // lblOperacion
@@ -60,16 +63,36 @@
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
+            // lblRepasoOperaciones
+            // 
+            this.lblRepasoOperaciones.AutoSize = true;
+            this.lblRepasoOperaciones.Location = new System.Drawing.Point(15, 35);
+            this.lblRepasoOperaciones.Name = "lblRepasoOperaciones";
+            this.lblRepasoOperaciones.Size = new System.Drawing.Size(35, 13);
+            this.lblRepasoOperaciones.TabIndex = 3;
+            this.lblRepasoOperaciones.Text = "label1";
+            // 
+            // dgvRepasoOperaciones
+            // 
+            this.dgvRepasoOperaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRepasoOperaciones.Location = new System.Drawing.Point(15, 172);
+            this.dgvRepasoOperaciones.Name = "dgvRepasoOperaciones";
+            this.dgvRepasoOperaciones.Size = new System.Drawing.Size(649, 322);
+            this.dgvRepasoOperaciones.TabIndex = 4;
+            // 
             // frmRepasoOperaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 515);
+            this.Controls.Add(this.dgvRepasoOperaciones);
+            this.Controls.Add(this.lblRepasoOperaciones);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.cmbOperacion);
             this.Controls.Add(this.lblOperacion);
             this.Name = "frmRepasoOperaciones";
             this.Text = "frmRepasoOperaciones";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRepasoOperaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,5 +103,7 @@
         private System.Windows.Forms.Label lblOperacion;
         private System.Windows.Forms.ComboBox cmbOperacion;
         private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Label lblRepasoOperaciones;
+        private System.Windows.Forms.DataGridView dgvRepasoOperaciones;
     }
 }
