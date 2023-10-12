@@ -65,17 +65,16 @@
             // 
             // lblRepasoOperaciones
             // 
-            this.lblRepasoOperaciones.AutoSize = true;
-            this.lblRepasoOperaciones.Location = new System.Drawing.Point(15, 35);
+            this.lblRepasoOperaciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRepasoOperaciones.Location = new System.Drawing.Point(13, 44);
             this.lblRepasoOperaciones.Name = "lblRepasoOperaciones";
-            this.lblRepasoOperaciones.Size = new System.Drawing.Size(35, 13);
+            this.lblRepasoOperaciones.Size = new System.Drawing.Size(651, 121);
             this.lblRepasoOperaciones.TabIndex = 3;
-            this.lblRepasoOperaciones.Text = "label1";
             // 
             // dgvRepasoOperaciones
             // 
             this.dgvRepasoOperaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRepasoOperaciones.Location = new System.Drawing.Point(15, 172);
+            this.dgvRepasoOperaciones.Location = new System.Drawing.Point(15, 181);
             this.dgvRepasoOperaciones.Name = "dgvRepasoOperaciones";
             this.dgvRepasoOperaciones.Size = new System.Drawing.Size(649, 322);
             this.dgvRepasoOperaciones.TabIndex = 4;
@@ -92,6 +91,7 @@
             this.Controls.Add(this.lblOperacion);
             this.Name = "frmRepasoOperaciones";
             this.Text = "frmRepasoOperaciones";
+            this.Load += new System.EventHandler(this.frmRepasoOperaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRepasoOperaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
