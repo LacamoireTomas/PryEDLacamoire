@@ -31,7 +31,7 @@ namespace PryEDLacamoire
                 break;
             }
         }
-
+        //
         private void frmRepasoOperaciones_Load(object sender, EventArgs e)
         {
             
