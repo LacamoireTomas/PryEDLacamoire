@@ -40,8 +40,8 @@ namespace PryEDLacamoire
 
                 case 2:
                     lblRepasoOperaciones.Text = cmbOperacion.Text + ":" +
-                        "";
-                    VarSQL = "";
+                        "Libros Posteriores al año 2000 y libros de menos de $200";
+                    VarSQL = "SELECT * FROM LIBRO WHERE Año > 2000  UNION SELECT * FROM LIBRO WHERE PRECIO < 200";
                     break;
 
                 case 3:
