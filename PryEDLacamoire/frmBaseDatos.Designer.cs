@@ -40,11 +40,11 @@
             this.btnDiferencia = new System.Windows.Forms.Button();
             this.btnInterseccion = new System.Windows.Forms.Button();
             this.btnUnion = new System.Windows.Forms.Button();
-            this.dgvBaseDatos = new System.Windows.Forms.DataGridView();
+            this.dgvBD = new System.Windows.Forms.DataGridView();
             this.mrcSELECT.SuspendLayout();
             this.mrcWHERE.SuspendLayout();
             this.mrcOperacionesAlgebraicas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBaseDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBD)).BeginInit();
             this.SuspendLayout();
             // 
             // mrcSELECT
@@ -67,6 +67,7 @@
             this.btnJuntar.TabIndex = 2;
             this.btnJuntar.Text = "Juntar";
             this.btnJuntar.UseVisualStyleBackColor = true;
+            this.btnJuntar.Click += new System.EventHandler(this.btnJuntar_Click);
             // 
             // btnProyeccionMultiatributo
             // 
@@ -76,6 +77,7 @@
             this.btnProyeccionMultiatributo.TabIndex = 1;
             this.btnProyeccionMultiatributo.Text = "Proyección Multiatributo";
             this.btnProyeccionMultiatributo.UseVisualStyleBackColor = true;
+            this.btnProyeccionMultiatributo.Click += new System.EventHandler(this.btnProyeccionMultiatributo_Click);
             // 
             // btnProyeccionSimple
             // 
@@ -85,6 +87,7 @@
             this.btnProyeccionSimple.TabIndex = 0;
             this.btnProyeccionSimple.Text = "Proyección Simple";
             this.btnProyeccionSimple.UseVisualStyleBackColor = true;
+            this.btnProyeccionSimple.Click += new System.EventHandler(this.btnProyeccionSimple_Click);
             // 
             // mrcWHERE
             // 
@@ -106,6 +109,7 @@
             this.btnSeleccionConvulcion.TabIndex = 3;
             this.btnSeleccionConvulcion.Text = "Selección por Convulción";
             this.btnSeleccionConvulcion.UseVisualStyleBackColor = true;
+            this.btnSeleccionConvulcion.Click += new System.EventHandler(this.btnSeleccionConvulcion_Click);
             // 
             // btnSeleccionMultiatributo
             // 
@@ -115,6 +119,7 @@
             this.btnSeleccionMultiatributo.TabIndex = 2;
             this.btnSeleccionMultiatributo.Text = "Selección Multiatributo";
             this.btnSeleccionMultiatributo.UseVisualStyleBackColor = true;
+            this.btnSeleccionMultiatributo.Click += new System.EventHandler(this.btnSeleccionMultiatributo_Click);
             // 
             // btnSeleccionSimple
             // 
@@ -124,6 +129,7 @@
             this.btnSeleccionSimple.TabIndex = 1;
             this.btnSeleccionSimple.Text = "Selección Simple";
             this.btnSeleccionSimple.UseVisualStyleBackColor = true;
+            this.btnSeleccionSimple.Click += new System.EventHandler(this.btnSeleccionSimple_Click);
             // 
             // mrcOperacionesAlgebraicas
             // 
@@ -145,6 +151,7 @@
             this.btnDiferencia.TabIndex = 4;
             this.btnDiferencia.Text = "Diferencia";
             this.btnDiferencia.UseVisualStyleBackColor = true;
+            this.btnDiferencia.Click += new System.EventHandler(this.btnDiferencia_Click);
             // 
             // btnInterseccion
             // 
@@ -154,6 +161,7 @@
             this.btnInterseccion.TabIndex = 3;
             this.btnInterseccion.Text = "Intersección";
             this.btnInterseccion.UseVisualStyleBackColor = true;
+            this.btnInterseccion.Click += new System.EventHandler(this.btnInterseccion_Click);
             // 
             // btnUnion
             // 
@@ -163,14 +171,15 @@
             this.btnUnion.TabIndex = 1;
             this.btnUnion.Text = "Union";
             this.btnUnion.UseVisualStyleBackColor = true;
+            this.btnUnion.Click += new System.EventHandler(this.btnUnion_Click);
             // 
-            // dgvBaseDatos
+            // dgvBD
             // 
-            this.dgvBaseDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBaseDatos.Location = new System.Drawing.Point(12, 12);
-            this.dgvBaseDatos.Name = "dgvBaseDatos";
-            this.dgvBaseDatos.Size = new System.Drawing.Size(652, 333);
-            this.dgvBaseDatos.TabIndex = 3;
+            this.dgvBD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBD.Location = new System.Drawing.Point(12, 12);
+            this.dgvBD.Name = "dgvBD";
+            this.dgvBD.Size = new System.Drawing.Size(652, 333);
+            this.dgvBD.TabIndex = 3;
             // 
             // frmBaseDatos
             // 
@@ -178,7 +187,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(676, 515);
-            this.Controls.Add(this.dgvBaseDatos);
+            this.Controls.Add(this.dgvBD);
             this.Controls.Add(this.mrcOperacionesAlgebraicas);
             this.Controls.Add(this.mrcWHERE);
             this.Controls.Add(this.mrcSELECT);
@@ -187,7 +196,7 @@
             this.mrcSELECT.ResumeLayout(false);
             this.mrcWHERE.ResumeLayout(false);
             this.mrcOperacionesAlgebraicas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBaseDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,6 +215,6 @@
         private System.Windows.Forms.Button btnSeleccionConvulcion;
         private System.Windows.Forms.Button btnDiferencia;
         private System.Windows.Forms.Button btnInterseccion;
-        private System.Windows.Forms.DataGridView dgvBaseDatos;
+        private System.Windows.Forms.DataGridView dgvBD;
     }
 }

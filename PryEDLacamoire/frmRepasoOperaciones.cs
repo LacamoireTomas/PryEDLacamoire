@@ -41,43 +41,44 @@ namespace PryEDLacamoire
                 case 2:
                     lblRepasoOperaciones.Text = cmbOperacion.Text + ":" +
                         "Libros Posteriores al año 2000 y libros de menos de $200";
-                    VarSQL = "SELECT * FROM LIBRO WHERE Año > 2000  UNION SELECT * FROM LIBRO WHERE PRECIO < 200";
+                    VarSQL = "SELECT Libro.Titulo, Libro.Año FROM Libro JOIN Pais.Nombre FROM Pais ON *";
                     break;
 
                 case 3:
                     lblRepasoOperaciones.Text = cmbOperacion.Text + ":" +
-                        "";
-                    VarSQL = "";
+                        "Titulos de los Libros";
+                    VarSQL = "SELECT Titulo FROM Libro";
                     break;
 
                 case 4:
                     lblRepasoOperaciones.Text = cmbOperacion.Text + ":" +
-                        "";
-                    VarSQL = "";
+                        "Todos los libros por titulo y año ordenados por precio de forma ascendente";
+                    VarSQL = "SELECT Titulo, Precio FROM Libro ORDER BY Precio ASC";
                     break;
 
                 case 5:
-                    lblRepasoOperaciones.Text = cmbOperacion.Text + ":" +
-                        "";
-                    VarSQL = "";
+                    lblRepasoOperaciones.Text = cmbOperacion.Text + ":" +//
+                        "Todos los libros de Estados Unidos y en idioma Ingles";
+                    VarSQL = "SELECT * FROM Libro WHERE IdPais = 4 AND IdIdioma = 1";
                     break;
 
-                case 6:
+                case 6://
                     lblRepasoOperaciones.Text = cmbOperacion.Text + ":" +
-                        "";
-                    VarSQL = "";
+                        "Todos los libros de mas caros que $100 y esten en Ingles";
+                    VarSQL = "SELECT * FROM Libro WHERE Precio > 200 INTERSECT SELECT * FROM Libro WHERE IdIdioma = 1; ";
                     break;
 
-                case 7:
+                case 7://
                     lblRepasoOperaciones.Text = cmbOperacion.Text + ":" +
-                        "";
-                    VarSQL = "";
+                        "Todos los libros que valgan 200";
+                    VarSQL = "SELECT * FROM Libro WHERE Precio = 200";
                     break;
 
-                case 8:
+                case 8: //
                     lblRepasoOperaciones.Text = cmbOperacion.Text + ":" +
-                        "";
-                    VarSQL = "";    
+                        "Libros de origen Sudamericano (Argentina, Colombia, Brasil)";
+                    VarSQL = "SELECT * FROM libro WHERE IdPais = 8 " + "UNION SELECT * FROM libro WHERE IdPais = 24 " +
+                             "UNION SELECT * FROM libro WHERE IdPais = 26";    
                     break;
             }
             objBD.Listar(dgvRepasoOperaciones, VarSQL);
